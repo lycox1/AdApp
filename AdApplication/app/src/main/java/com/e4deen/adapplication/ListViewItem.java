@@ -10,8 +10,10 @@ public class ListViewItem {
     private String titleStr ;
     private String descStr ;
 
-    public void setIcon(Drawable icon) {
-        iconDrawable = icon ;
+    public void setIcon(Drawable drawable) {
+        //drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+
+        iconDrawable = drawable ;
     }
     public void setTitle(String title) {
         titleStr = title ;
@@ -21,6 +23,7 @@ public class ListViewItem {
     }
 
     public Drawable getIcon() {
+        this.iconDrawable.setBounds(5, 5, 100, 100);
         return this.iconDrawable ;
     }
     public String getTitle() {
