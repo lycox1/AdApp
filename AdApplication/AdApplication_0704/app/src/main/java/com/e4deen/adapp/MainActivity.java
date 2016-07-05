@@ -1,9 +1,12 @@
 package com.e4deen.adapp;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,10 +16,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    final String LOG_TAG = "e4deen_MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +74,38 @@ public class MainActivity extends AppCompatActivity
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.pic3),
                 "Ind", "Assignment Ind Black 36dp");
 
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.pic4),
-                "Ind", "Assignment Ind Black 36dp");
+//        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.pic4),
+//                "Ind", "Assignment Ind Black 36dp");
 //---------------------------------------- End -----------------------------------------------------
+//---------------------------------------- Start 2 -------------------------------------------------
+        ListView listview2;
+        //ListViewAdapterForMainView adapter;
+
+        ArrayList<String> menuList = new ArrayList<String>();
+        menuList.add("Test Menu 1");
+        menuList.add("Test Menu 2");
+        menuList.add("Test Menu 3");
+        menuList.add("Test Menu 4");
+
+        //adapter = new ListViewAdapterForMainView();
+
+        ArrayAdapter<String> adapter2;
+        adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, menuList);
+        listview2 = (ListView) findViewById(R.id.listview2);
+
+        if(adapter2 == null)
+            Log.e(LOG_TAG, "adapter2 is null");
+        if ( listview2 == null)
+            Log.e(LOG_TAG, "listview2 is null");
+
+        listview2.setAdapter(adapter2);
+
+        listview2.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        listview2.setDivider(new ColorDrawable(Color.WHITE));
+        listview2.setDividerHeight(2);
+//---------------------------------------- End -----------------------------------------------------
+
+
 
     }
 
