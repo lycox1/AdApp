@@ -26,12 +26,43 @@
                 android:layout_height="wrap_content"
                 android:text="카테고리"/>
 
-            <ListView
-                android:background="#ffffff"
-
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/listview2"></ListView>
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:divider="#a66060"
+                android:background="#ffffff"
+                android:weightSum="1"
+                android:layout_weight="1">
+
+                <ListView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listview2"
+                    android:divider="#ff0000"
+                    android:dividerHeight="1dp"
+                    android:contextClickable="false"
+                    android:drawSelectorOnTop="false"
+                    android:background="@drawable/xml_border"></ListView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="New Text  aaaa"
+                    android:id="@+id/textView2"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </android.support.design.widget.NavigationView>

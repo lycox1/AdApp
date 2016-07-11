@@ -18,9 +18,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -86,11 +83,23 @@ public class MainActivity extends AppCompatActivity
         menuList.add("Test Menu 2");
         menuList.add("Test Menu 3");
         menuList.add("Test Menu 4");
+        menuList.add("Test Menu 5");
+        menuList.add("Test Menu 6");
+        menuList.add("Test Menu 7");
+        menuList.add("Test Menu 8");
+        menuList.add("Test Menu 9");
+        menuList.add("Test Menu 10");
+        menuList.add("Test Menu 10");
+        menuList.add("Test Menu 10");
+        menuList.add("Test Menu 10");
+        menuList.add("Test Menu 10");
+        menuList.add("Test Menu 10");
+        menuList.add("Test Menu 10");
 
         //adapter = new ListViewAdapterForMainView();
 
         ArrayAdapter<String> adapter2;
-        adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, menuList);
+        adapter2 = new ArrayAdapter<String>(this, R.layout.listview_for_navigation_view, menuList);
         listview2 = (ListView) findViewById(R.id.listview2);
 
         if(adapter2 == null)
