@@ -1,4 +1,4 @@
-package com.e4deen.adapp;
+package com.e4deen.adapp.listview;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.e4deen.adapp.R;
+import com.e4deen.adapp.listview.ListViewItemForMainView;
 
 import java.util.ArrayList;
 
@@ -42,7 +45,7 @@ public class ListViewAdapterForMainView extends BaseAdapter {
         }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.imageView1) ;
+        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.imageViewMain) ;
 //        TextView titleTextView = (TextView) convertView.findViewById(R.id.textView1) ;
 //        TextView descTextView = (TextView) convertView.findViewById(R.id.textView2) ;
 

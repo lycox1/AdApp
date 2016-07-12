@@ -10,6 +10,7 @@
 
     <android.support.design.widget.NavigationView android:id="@+id/nav_view"
         android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_marginLeft="-64dp"
         android:layout_gravity="start" >
 
         <LinearLayout
@@ -18,13 +19,6 @@
             android:layout_height="match_parent">
 
             <include layout="@layout/nav_header_main" android:id="@+id/my" />
-
-            <TextView
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="카테고리"/>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -37,12 +31,23 @@
                 android:weightSum="1"
                 android:layout_weight="1">
 
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="카테고리"
+                    android:background="#b4adad"
+                    android:textSize="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
+
                 <ListView
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/listview2"
-                    android:divider="#ff0000"
+                    android:id="@+id/listview_nav"
+                    android:divider="#b4adad"
                     android:dividerHeight="1dp"
                     android:contextClickable="false"
                     android:drawSelectorOnTop="false"

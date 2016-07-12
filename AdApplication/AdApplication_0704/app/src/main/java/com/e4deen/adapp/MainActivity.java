@@ -1,7 +1,5 @@
 package com.e4deen.adapp;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,10 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+import com.e4deen.adapp.listview.ListViewAdapterForNavView;
+import com.e4deen.adapp.listview.ListViewAdapterForMainView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -76,46 +74,27 @@ public class MainActivity extends AppCompatActivity
 //---------------------------------------- End -----------------------------------------------------
 //---------------------------------------- Start 2 -------------------------------------------------
         ListView listview2;
-        //ListViewAdapterForMainView adapter;
+        ListViewAdapterForNavView adapter2;
 
-        ArrayList<String> menuList = new ArrayList<String>();
-        menuList.add("Test Menu 1");
-        menuList.add("Test Menu 2");
-        menuList.add("Test Menu 3");
-        menuList.add("Test Menu 4");
-        menuList.add("Test Menu 5");
-        menuList.add("Test Menu 6");
-        menuList.add("Test Menu 7");
-        menuList.add("Test Menu 8");
-        menuList.add("Test Menu 9");
-        menuList.add("Test Menu 10");
-        menuList.add("Test Menu 10");
-        menuList.add("Test Menu 10");
-        menuList.add("Test Menu 10");
-        menuList.add("Test Menu 10");
-        menuList.add("Test Menu 10");
-        menuList.add("Test Menu 10");
+        adapter2 = new ListViewAdapterForNavView();
 
-        //adapter = new ListViewAdapterForMainView();
-
-        ArrayAdapter<String> adapter2;
-        adapter2 = new ArrayAdapter<String>(this, R.layout.listview_for_navigation_view, menuList);
-        listview2 = (ListView) findViewById(R.id.listview2);
-
-        if(adapter2 == null)
-            Log.e(LOG_TAG, "adapter2 is null");
-        if ( listview2 == null)
-            Log.e(LOG_TAG, "listview2 is null");
+        listview2 = (ListView) findViewById(R.id.listview_nav);
 
         listview2.setAdapter(adapter2);
 
-        listview2.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        listview2.setDivider(new ColorDrawable(Color.WHITE));
-        listview2.setDividerHeight(2);
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.cart),
+                "취미/도서/티켓", ContextCompat.getDrawable(this, R.drawable.double_arrow_right)) ;
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.coffee),
+                "가구/생활/주방/식품", ContextCompat.getDrawable(this, R.drawable.double_arrow_right));
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.letter),
+                "출산/육아 등", ContextCompat.getDrawable(this, R.drawable.double_arrow_right));
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.noodle),
+                "가전/디지털/컴퓨터", ContextCompat.getDrawable(this, R.drawable.double_arrow_right));
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.cart),
+                "패션/뷰티", ContextCompat.getDrawable(this, R.drawable.double_arrow_right));
+        adapter2.addItem(ContextCompat.getDrawable(this, R.drawable.coffee),
+                "스포츠/레저용품", ContextCompat.getDrawable(this, R.drawable.double_arrow_right));
 //---------------------------------------- End -----------------------------------------------------
-
-
-
     }
 
     @Override
